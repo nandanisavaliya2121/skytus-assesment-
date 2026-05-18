@@ -1,0 +1,9 @@
+a= int(input("enter the value of a : "))
+b= int(input("enter the value of b : "))
+
+if (a>0 and b>0):
+    print ("numbers are positive")
+elif (a<0 and b<0):
+    print("numbers are negative")
+else:
+    print("numbers are not valid")
