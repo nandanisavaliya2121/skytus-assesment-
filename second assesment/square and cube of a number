@@ -1,0 +1,5 @@
+a= int(input("enter the value of a : "))
+b=a*a
+print ("square of a is ",b)
+c=a*a*a
+print("cube of a is",c)
