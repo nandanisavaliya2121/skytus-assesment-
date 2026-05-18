@@ -1,0 +1,8 @@
+a= int(input("enter the value of a : "))
+b= int(input("enter the value of b : "))
+if a>b:
+
+    print ("a is larger which is ", a)
+    
+else :
+    print("b is larger which is ", b)
