@@ -1,0 +1,4 @@
+a=2
+b=11
+remainder=b%a
+print ("remainder is :", remainder )
