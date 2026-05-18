@@ -1,0 +1,8 @@
+a= input("enter the string a : ")
+b= input("enter the string b : ")
+c=int(a)
+d=int(b)
+e=c*10
+f=d*10
+print("integer value of a is ",e)
+print("integer value of b is ",f)
