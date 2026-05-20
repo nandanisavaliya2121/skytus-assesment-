@@ -1,0 +1,6 @@
+a= str(input("enter value of a : "))
+# b= int(input("enter value of b : "))
+
+c=(len(a))
+
+print("length of your string is ",c)
