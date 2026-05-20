@@ -1,0 +1,3 @@
+a= int(input("enter your birth year : "))
+b=2026-a
+print("your current age is ",b)
