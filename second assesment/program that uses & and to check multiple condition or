@@ -1,0 +1,7 @@
+a= int(input("enter the value of a : "))
+b= int(input("enter the value of b : "))
+
+if(a%2==0 and b%2==0) :
+        print("both numbers are even")
+if (a<0 or b<0):
+        print(" any one number is negative")
