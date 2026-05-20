@@ -1,0 +1,4 @@
+a= str(input("Type sentence in uppercase : "))
+
+c=(a.lower())
+print("Sentence in lower case looks like : ",c)
