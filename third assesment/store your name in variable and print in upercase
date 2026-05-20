@@ -1,0 +1,3 @@
+a= str(input("enter your name : "))
+b=a.upper()
+print("your name in uppercase looks like : ",b)
