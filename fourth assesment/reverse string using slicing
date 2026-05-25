@@ -1,0 +1,4 @@
+a = ("hello welcome to skytus")
+b = a[::-1]
+
+print(b)
