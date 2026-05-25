@@ -1,0 +1,6 @@
+a = ("hello welcome to skytus")
+b = a[0]
+c = a[-1]
+
+print("first letter is : ",b)
+print("first letter is : ",c)
