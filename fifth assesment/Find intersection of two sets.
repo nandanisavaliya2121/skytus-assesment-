@@ -1,0 +1,5 @@
+fruits = {"apple", "banana", "grapes", "dragon fruit", "kiwi"}
+favourite={"grapes","guava"}
+
+result=fruits & favourite
+print(result)
