@@ -1,0 +1,4 @@
+fruits = {"apple", "banana", "grapes", "dragon fruit", "kiwi"}
+favourite={"grapes","guava"}
+
+print(fruits.issubset(favourite))
