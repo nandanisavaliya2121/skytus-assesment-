@@ -1,0 +1,6 @@
+fruits = ("apple", "banana", "grapes", "dragon fruit", "kiwi")
+temp=list(fruits)
+
+temp.remove("banana")
+fruits=tuple(temp)
+print(fruits)
