@@ -1,0 +1,8 @@
+fruits = ("apple", "banana", "grapes", "dragon fruit", "kiwi")
+
+fruits = fruits + ("oranges",)
+
+name = " ".join(fruits)
+
+# print(fruits)
+print(name)
