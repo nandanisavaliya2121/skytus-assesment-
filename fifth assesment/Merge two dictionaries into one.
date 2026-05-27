@@ -1,0 +1,10 @@
+student = {
+    "name":"nandani",
+    "marks": 85
+}
+student1 ={
+    "surname" : "savaliya"
+}
+student2 = student | student1
+
+print(student2)
