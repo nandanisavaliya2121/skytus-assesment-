@@ -1,0 +1,13 @@
+a=int(input("enter the unit consumed :"))
+f=0
+g=0
+h=0
+if a>0 and a<=100:
+    f=a*5
+    print("your bill is: ",f)
+elif a>100 and a<=200:
+    g=a*7
+    print("your bill is : ",g)
+elif a>200:
+    h=a*10
+    print("your bill is : ",h)
