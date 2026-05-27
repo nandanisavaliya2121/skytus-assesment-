@@ -1,0 +1,8 @@
+balance=100000
+b=int(balance)
+a=int(input("enter the amounth you want to withdraw:"))
+
+if a>=b:
+    print("your bankaccount doesn't have suffiecient balance")
+else:
+    print("your bankaccount has suffiecient balance")
