@@ -1,0 +1,6 @@
+student = {
+    "name":"nandani",
+    "marks": 85
+}
+del student["name"]
+print(student)
