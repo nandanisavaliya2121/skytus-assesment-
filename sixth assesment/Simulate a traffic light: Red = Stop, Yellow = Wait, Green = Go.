@@ -1,0 +1,8 @@
+traffic_signal= str(input("enter traffic color:"))
+
+if traffic_signal=="red":
+    print("stop")
+elif traffic_signal=="yellow":
+    print("Wait")
+elif traffic_signal=="green":
+    print("go")
