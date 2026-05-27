@@ -1,0 +1,6 @@
+student = {
+    "name":"nandani",
+    "marks": 85
+}
+student["city"]="vadodara"
+print(student)
