@@ -1,0 +1,9 @@
+student = {
+    "name":"nandani",
+    "marks": 85
+}
+
+if "marks" in student:
+    print("yes")
+else:
+    print("no")
