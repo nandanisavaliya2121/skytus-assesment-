@@ -1,0 +1,12 @@
+student = {
+    "Nandani": 85,
+    "Rahul": 92,
+    "Priya": 78
+}
+
+reversed_dict = {}
+
+for key, value in student.items():
+    reversed_dict[value] = key
+
+print(reversed_dict)
