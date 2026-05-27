@@ -1,0 +1,9 @@
+marks = {
+    "Nandani": 85,
+    "Rahul": 92,
+    "Priya": 78
+}
+
+highest = max(marks, key=marks.get)
+
+print(highest)
