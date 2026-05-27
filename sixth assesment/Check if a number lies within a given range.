@@ -1,0 +1,23 @@
+a=int(input("enter the number:"))
+
+if (a>0 and a<=10):
+    print("number lies between 0 to 10")
+elif(a>11 and a<=20):
+    print("number lies between 11 to 20")
+elif(a>21 and a<=30):
+        print("number lies between 21 to 30")
+elif(a>31 and a<=40):
+         print("number lies between 31 to 40")
+elif(a>41 and a<=50):
+          print("number lies between 41 to 50")
+elif(a>51 and a<=60):
+           print("number lies between 51 to 60")
+elif(a>61 and a<=70):
+            print("number lies between 61 to 70")
+elif(a>71 and a<=80):
+            print("number lies between 71 to 80")
+elif(a>81 and a<=90):
+            print("number lies between 81 to 90")
+elif(a>91 and a<=100):
+            print("number lies between 91 to 100")
+
