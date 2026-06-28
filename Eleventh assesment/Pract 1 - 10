@@ -1,0 +1,115 @@
+1. Write a program to handle division by zero error
+try:
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+
+    result = a / b
+    print("Result:", result)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+----------------------------------------------------------------------------------------------
+
+2. Write a program to handle invalid integer input
+try:
+    num = int(input("Enter a number: "))
+    print("You entered:", num)
+
+except ValueError:
+    print("Invalid input")
+------------------------------------------------------------------------------------------
+
+3. Write a program to open a file and handle the "file not found" error
+try:
+    file = open("sample.txt", "r")
+    print(file.read())
+    file.close()
+
+except FileNotFoundError:
+    print("File not found")
+---------------------------------------------------------------------------------------------
+4. Write a program to demonstrate multiple exception blocks
+try:
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+
+    print(a / b)
+
+except ZeroDivisionError:
+    print("Division by zero is not allowed")
+
+except ValueError:
+    print("Please enter valid integers")
+--------------------------------------------------------------------------------------------
+5. Write a program to use finally for resource cleanup
+try:
+    file = open("sample.txt", "r")
+    print(file.read())
+
+except FileNotFoundError:
+    print("File not found")
+
+finally:
+    print("Program ended")
+--------------------------------------------------------------------------------------------
+6. Write a program to create a custom exception for invalid age (<18)
+class InvalidAgeError(Exception):
+    pass
+
+try:
+    age = int(input("Enter age: "))
+
+    if age < 18:
+        raise InvalidAgeError
+
+    print("Eligible")
+
+except InvalidAgeError:
+    print("Age must be 18 or above")
+----------------------------------------------------------------------------------------------
+7. Write a program to handle IndexError when accessing a list
+numbers = [10, 20, 30]
+
+try:
+    index = int(input("Enter index: "))
+    print(numbers[index])
+
+except IndexError:
+    print("Index out of range")
+-----------------------------------------------------------------------------------------------
+8. Write a program that takes two numbers and handles all possible errors
+try:
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+
+    print("Result:", a / b)
+
+except ValueError:
+    print("Invalid input")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+except Exception as e:
+    print("Error:", e)
+-----------------------------------------------------------------------------------------------
+9. Write a program to log errors to a file instead of printing them
+try:
+    a = 10 / 0
+
+except Exception as e:
+    file = open("error_log.txt", "a")
+    file.write(str(e))
+    file.close()
+----------------------------------------------------------------------------------------------
+10. Write a program that validates an email format and raises an exception for invalid ones
+try:
+    email = input("Enter email: ")
+
+    if "@" not in email or "." not in email:
+        raise ValueError
+
+    print("Valid Email")
+
+except ValueError:
+    print("Invalid Email Format")
