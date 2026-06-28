@@ -1,0 +1,59 @@
+1. Write query to find Nth highest salary
+
+Example: 3rd highest salary
+
+SELECT DISTINCT salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 1 OFFSET 2;
+
+
+2. Remove duplicate records
+
+Assume table employees(emp_id, emp_name, salary).
+
+DELETE e1
+FROM employees e1
+JOIN employees e2
+ON e1.emp_name = e2.emp_name
+AND e1.emp_id > e2.emp_id;
+
+
+3. Find records common in two tables
+
+Suppose tables table1(id, name) and table2(id, name).
+
+SELECT *
+FROM table1
+INTERSECT
+SELECT *
+FROM table2;
+
+If INTERSECT is not supported (MySQL):
+
+SELECT t1.*
+FROM table1 t1
+JOIN table2 t2
+ON t1.id = t2.id;
+
+
+4. Find employees hired in last 6 months
+
+Assume table employees(emp_id, emp_name, hire_date).
+
+SELECT *
+FROM employees
+WHERE hire_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH);
+
+
+5. Find continuous duplicate values
+
+Assume table logs(id, value).
+
+SELECT DISTINCT l1.value
+FROM logs l1
+JOIN logs l2
+ON l1.id + 1 = l2.id
+AND l1.value = l2.value;
+
+These are common advanced SQL interview and practical queries.
