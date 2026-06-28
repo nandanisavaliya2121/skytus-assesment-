@@ -1,0 +1,161 @@
+1. Create a base class Animal and subclasses Dog and Cat
+class Animal:
+    def sound(self):
+        print("Animal makes sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+class Cat(Animal):
+    def sound(self):
+        print("Cat meows")
+
+d = Dog()
+c = Cat()
+
+d.sound()
+c.sound()
+----------------------------------------------------------------------
+
+2. Create a class hierarchy for Vehicle → Car → ElectricCar
+class Vehicle:
+    def show(self):
+        print("This is a vehicle")
+
+class Car(Vehicle):
+    def display(self):
+        print("This is a car")
+
+class ElectricCar(Car):
+    def info(self):
+        print("This is an electric car")
+
+e = ElectricCar()
+
+e.show()
+e.display()
+e.info()
+-------------------------------------------------------------------------------
+
+3. Implement method overriding in a base and derived class
+class Parent:
+    def show(self):
+        print("Parent class")
+
+class Child(Parent):
+    def show(self):
+        print("Child class")
+
+c = Child()
+c.show()
+---------------------------------------------------------------------------
+
+4. Demonstrate multiple inheritance with two parent classes
+class Father:
+    def skills1(self):
+        print("Driving")
+
+class Mother:
+    def skills2(self):
+        print("Cooking")
+
+class Child(Father, Mother):
+    pass
+
+c = Child()
+
+c.skills1()
+c.skills2()
+--------------------------------------------------------------------------
+
+5. Create a polymorphic function that works with different shapes
+class Circle:
+    def draw(self):
+        print("Drawing Circle")
+
+class Rectangle:
+    def draw(self):
+        print("Drawing Rectangle")
+
+def display(shape):
+    shape.draw()
+
+c = Circle()
+r = Rectangle()
+
+display(c)
+display(r)
+----------------------------------------------------------------------------------------------
+6. Create a Bank system with SavingsAccount and CurrentAccount
+class BankAccount:
+    def account_type(self):
+        print("Bank Account")
+
+class SavingsAccount(BankAccount):
+    def account_type(self):
+        print("Savings Account")
+
+class CurrentAccount(BankAccount):
+    def account_type(self):
+        print("Current Account")
+
+s = SavingsAccount()
+c = CurrentAccount()
+
+s.account_type()
+c.account_type()
+-----------------------------------------------------------------------------------------------
+7. Create a class with private attributes and getter/setter methods
+class Student:
+    def __init__(self):
+        self.__marks = 0
+
+    def set_marks(self, marks):
+        self.__marks = marks
+
+    def get_marks(self):
+        return self.__marks
+
+s = Student()
+
+s.set_marks(90)
+print("Marks:", s.get_marks())
+---------------------------------------------------------------------------------------------
+8. Create a Teacher and Student class to show inheritance
+class Teacher:
+    def teach(self):
+        print("Teacher teaches")
+
+class Student(Teacher):
+    def study(self):
+        print("Student studies")
+
+s = Student()
+
+s.teach()
+s.study()
+-----------------------------------------------------------------------------------------------
+9. Create a MusicPlayer class and subclass Spotify to override play method
+class MusicPlayer:
+    def play(self):
+        print("Playing music")
+
+class Spotify(MusicPlayer):
+    def play(self):
+        print("Playing music on Spotify")
+
+s = Spotify()
+s.play()
+-----------------------------------------------------------------------------------------------
+10. Demonstrate the use of super() in inheritance
+class Parent:
+    def __init__(self):
+        print("Parent Constructor")
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        print("Child Constructor")
+
+c = Child()
