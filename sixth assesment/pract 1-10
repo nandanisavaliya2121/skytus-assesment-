@@ -1,0 +1,129 @@
+1. Create a custom math module and import it in another file
+
+File: mymath.py
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+File: main.py
+import mymath
+
+print(mymath.add(10, 5))
+print(mymath.subtract(10, 5))
+
+--------------------------------------------------------------------
+2. Create a module to perform string operations
+File: string_operations.py
+def upper_case(s):
+    return s.upper()
+
+def lower_case(s):
+    return s.lower()
+
+def reverse(s):
+    return s[::-1]
+File: main.py
+import string_operations
+
+text = input("Enter a string: ")
+
+print(string_operations.upper_case(text))
+print(string_operations.lower_case(text))
+print(string_operations.reverse(text))
+
+-----------------------------------------------------------------------
+
+3. Use random module to generate 5 random integers
+import random
+
+for i in range(5):
+    print(random.randint(1, 100))
+-----------------------------------------------------------------------
+
+4. Use datetime module to display current date and time
+from datetime import datetime
+
+now = datetime.now()
+
+print("Current Date and Time:")
+print(now)
+----------------------------------------------------------------------
+
+5. Use math module to find factorial of a number
+import math
+
+num = int(input("Enter a number: "))
+
+print("Factorial =", math.factorial(num))
+-----------------------------------------------------------------------
+
+6. Create a package shapes with modules for circle and rectangle
+Folder Structure
+shapes/
+    __init__.py
+    circle.py
+    rectangle.py
+
+main.py
+File: circle.py
+def area(radius):
+    return 3.14 * radius * radius
+
+File: rectangle.py
+def area(length, width):
+    return length * width
+
+File: main.py
+from shapes.circle import area as circle_area
+from shapes.rectangle import area as rectangle_area
+
+print("Circle Area =", circle_area(5))
+print("Rectangle Area =", rectangle_area(4, 6))
+-------------------------------------------------------------------------------------
+
+7. Import multiple functions from one module and use them
+File: calculator.py
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b
+File: main.py
+
+from calculator import add, multiply
+
+print(add(5, 3))
+print(multiply(5, 3))
+-----------------------------------------------------------------------------------
+
+8. Shuffle a list using random module
+import random
+
+numbers = [1, 2, 3, 4, 5]
+
+random.shuffle(numbers)
+
+print(numbers)
+
+-----------------------------------------------------------------------------------
+9. Calculate the difference between two dates
+from datetime import datetime
+
+date1 = datetime(2025, 1, 1)
+date2 = datetime(2025, 6, 1)
+
+difference = date2 - date1
+
+print("Difference in days:", difference.days)
+-------------------------------------------------------------------------------
+10. Use os module to list files in a directory
+import os
+
+path = "."
+
+files = os.listdir(path)
+
+for file in files:
+    print(file)
+
