@@ -1,0 +1,121 @@
+1. Write a program to read a file and display its contents
+file = open("sample.txt", "r")
+
+content = file.read()
+print(content)
+
+file.close()
+--------------------------------------------------------------------------------------------------
+
+2. Write a program to count the number of lines in a file
+file = open("sample.txt", "r")
+
+lines = file.readlines()
+
+print("Number of lines:", len(lines))
+
+file.close()
+-------------------------------------------------------------------------------------------------
+3. Write a program to count how many times each word appears in a file
+file = open("sample.txt", "r")
+
+text = file.read()
+words = text.split()
+
+count = {}
+
+for word in words:
+    count[word] = count.get(word, 0) + 1
+
+print(count)
+
+file.close()
+------------------------------------------------------------------------------------------------------
+4. Write a program to write 5 user-entered sentences to a file
+file = open("sample.txt", "w")
+
+for i in range(5):
+    sentence = input("Enter sentence: ")
+    file.write(sentence + "\n")
+
+file.close()
+
+print("Data written successfully")
+--------------------------------------------------------------------------------------------------
+5. Write a program to append a list of strings to an existing file
+data = ["Apple", "Banana", "Mango"]
+
+file = open("sample.txt", "a")
+
+for item in data:
+    file.write(item + "\n")
+
+file.close()
+
+print("Data appended successfully")
+------------------------------------------------------------------------------------------------
+6. Write a program to read a file and print only lines containing a specific word
+word = input("Enter word to search: ")
+
+file = open("sample.txt", "r")
+
+for line in file:
+    if word in line:
+        print(line)
+
+file.close()
+-----------------------------------------------------------------------------------------------
+7. Write a program to replace a specific word in a file and save changes
+file = open("sample.txt", "r")
+
+text = file.read()
+file.close()
+
+text = text.replace("old", "new")
+
+file = open("sample.txt", "w")
+file.write(text)
+file.close()
+
+print("Word replaced successfully")
+-----------------------------------------------------------------------------------------------
+8. Write a program to merge the contents of two text files into a third file
+file1 = open("file1.txt", "r")
+file2 = open("file2.txt", "r")
+
+content1 = file1.read()
+content2 = file2.read()
+
+file3 = open("merged.txt", "w")
+file3.write(content1)
+file3.write(content2)
+
+file1.close()
+file2.close()
+file3.close()
+
+print("Files merged successfully")
+------------------------------------------------------------------------------------------------------------
+9. Write a program to read a CSV file and display its content in a formatted way
+import csv
+
+file = open("data.csv", "r")
+
+reader = csv.reader(file)
+
+for row in reader:
+    print("\t".join(row))
+
+file.close()
+--------------------------------------------------------------------------------------------------------------
+10. Write a program to back up a file by copying its contents into another file
+source = open("sample.txt", "r")
+
+content = source.read()
+source.close()
+
+backup = open("backup.txt", "w")
+backup.write(content)
+backup.close()
+
+print("Backup created successfully")
