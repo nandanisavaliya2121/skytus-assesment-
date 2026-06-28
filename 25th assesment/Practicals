@@ -1,0 +1,45 @@
+1. Add index to improve search on orders.customer_id
+CREATE INDEX idx_customer_id
+ON orders(customer_id);
+
+
+2. Use EXPLAIN to analyze query
+EXPLAIN
+SELECT *
+FROM orders
+WHERE customer_id = 1;
+
+
+3. Optimize a slow JOIN query
+
+Before optimization:
+
+SELECT c.name, o.order_id
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id;
+
+Optimization: Create an index on the join column.
+
+CREATE INDEX idx_orders_customer
+ON orders(customer_id);
+
+Then analyze:
+
+EXPLAIN
+SELECT c.name, o.order_id
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id;
+
+
+4. Explain when an index should not be used
+Indexes should generally not be used:
+
+On tables with very few records.
+On columns that change frequently (INSERT, UPDATE, DELETE).
+On columns having very few unique values (e.g., Gender: Male/Female).
+When the table is updated more often than it is searched.
+When queries retrieve almost all rows from the table.
+
+These tasks cover Indexing, EXPLAIN, Query Optimization, and Index Usage concepts.
