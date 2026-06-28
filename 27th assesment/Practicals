@@ -1,0 +1,165 @@
+Mess Management System Database Design
+1. Create Database
+CREATE DATABASE mess_management;
+USE mess_management;
+
+2. Tables
+Students Table
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50),
+    department VARCHAR(30),
+    year INT,
+    phone VARCHAR(15)
+);
+Mess Table
+CREATE TABLE mess (
+    mess_id INT PRIMARY KEY,
+    mess_name VARCHAR(50),
+    location VARCHAR(50)
+);
+Menu Table
+CREATE TABLE menu (
+    menu_id INT PRIMARY KEY,
+    mess_id INT,
+    meal_type VARCHAR(20),
+    item_name VARCHAR(50),
+    price INT,
+    FOREIGN KEY (mess_id) REFERENCES mess(mess_id)
+);
+Attendance Table
+CREATE TABLE attendance (
+    attendance_id INT PRIMARY KEY,
+    student_id INT,
+    mess_id INT,
+    attend_date DATE,
+    status VARCHAR(10),
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (mess_id) REFERENCES mess(mess_id)
+);
+Payment Table
+CREATE TABLE payments (
+    payment_id INT PRIMARY KEY,
+    student_id INT,
+    amount INT,
+    payment_date DATE,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+
+
+3. Relationships
+One Student → Many Payments
+One Student → Many Attendance Records
+One Mess → Many Menu Items
+One Mess → Many Attendance Records
+
+
+4. Sample Data
+INSERT INTO students VALUES
+(1,'Rahul','CSE',2,'9876543210'),
+(2,'Priya','IT',3,'9876543211'),
+(3,'Amit','ECE',1,'9876543212');
+
+INSERT INTO mess VALUES
+(101,'Boys Mess','Block A'),
+(102,'Girls Mess','Block B');
+
+INSERT INTO menu VALUES
+(1,101,'Breakfast','Poha',30),
+(2,101,'Lunch','Rice',50),
+(3,102,'Dinner','Chapati',40);
+
+INSERT INTO attendance VALUES
+(1,1,101,'2026-06-29','Present'),
+(2,2,102,'2026-06-29','Present'),
+(3,3,101,'2026-06-29','Absent');
+
+INSERT INTO payments VALUES
+(1,1,3000,'2026-06-01'),
+(2,2,3200,'2026-06-02'),
+(3,3,2800,'2026-06-03');
+
+5. Business Queries
+
+1. Display all students
+SELECT * FROM students;
+
+2. Display students present today
+SELECT s.student_name
+FROM students s
+JOIN attendance a
+ON s.student_id = a.student_id
+WHERE a.status='Present';
+
+3. Total payments received
+SELECT SUM(amount) AS total_payment
+FROM payments;
+
+4. Find absent students
+SELECT s.student_name
+FROM students s
+JOIN attendance a
+ON s.student_id=a.student_id
+WHERE a.status='Absent';
+
+5. Show menu of Boys Mess
+SELECT item_name
+FROM menu
+WHERE mess_id=101;
+
+6. Count total students
+SELECT COUNT(*) FROM students;
+
+7. Average payment
+SELECT AVG(amount) FROM payments;
+
+8. Highest payment
+SELECT MAX(amount) FROM payments;
+
+9. Students from CSE department
+SELECT * FROM students
+WHERE department='CSE';
+
+10. Attendance count
+SELECT status,COUNT(*)
+FROM attendance
+GROUP BY status;
+
+11. Students who paid more than 3000
+SELECT s.student_name
+FROM students s
+JOIN payments p
+ON s.student_id=p.student_id
+WHERE p.amount>3000;
+
+12. Department-wise student count
+SELECT department,COUNT(*)
+FROM students
+GROUP BY department;
+
+13. Monthly collection
+SELECT MONTH(payment_date),SUM(amount)
+FROM payments
+GROUP BY MONTH(payment_date);
+
+14. Students with no payment
+SELECT s.student_name
+FROM students s
+LEFT JOIN payments p
+ON s.student_id=p.student_id
+WHERE p.payment_id IS NULL;
+
+15. Total menu items
+SELECT COUNT(*) FROM menu;
+6. Optimize Queries
+Create Index on Student ID
+CREATE INDEX idx_student
+ON attendance(student_id);
+Create Index on Payment Date
+CREATE INDEX idx_payment_date
+ON payments(payment_date);
+Analyze Query
+EXPLAIN
+SELECT *
+FROM attendance
+WHERE student_id = 1;
